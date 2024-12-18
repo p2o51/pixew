@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { argbFromRgb, themeFromSourceColor, hexFromArgb } from '@material/material-color-utilities';
 import html2canvas from 'html2canvas-pro';
+import Link from 'next/link';
 
 export default function Home() {
   const [emojiInput, setEmojiInput] = useState('🌟');
@@ -290,6 +291,36 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        <footer className="flex flex-col items-start justify-center gap-2 text-gray-500">
+          <p className="text-lg">
+            Thanks for{' '}
+            <Link href="https://fonts.google.com/noto/specimen/Noto+Emoji" className="hover:text-blue-500 transition-colors" target="_blank">
+              Great Noto Emoji
+            </Link>
+            , and{' '}
+            <Link href="https://m3.material.io/styles/color/system/overview" className="hover:text-blue-500 transition-colors" target="_blank">
+              Great Material Colors
+            </Link>
+            .
+          </p>
+          <Link 
+            href="https://twitter.com/GojyuuPlusOne" 
+            target="_blank" 
+            className="flex items-center gap-1 hover:text-blue-500 transition-colors"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            @GojyuuPlusOne
+          </Link>
+        </footer>
       </div>
     </main>
   );
